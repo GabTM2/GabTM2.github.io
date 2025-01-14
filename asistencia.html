@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asistencia Total</title>
+	<style>
+		body {
+			background-color: #F7F7F7; /* gris claro */
+		}
+		.container {
+			width: 80%;
+			margin: 40px auto;
+			background-color: #FFFFFF; /* blanco */
+			padding: 20px;
+			border: 1px solid #000000; /* negro */
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+		.table-container {
+			overflow-x: auto;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid #000000; /* negro */
+			padding: 10px;
+			text-align: center;
+		}
+		th {
+			background-color: #F2C464; /* amarillo claro */
+			color: #000000; /* negro */
+		}
+		td {
+			background-color: #FFFFFF; /* blanco */
+		}
+		td:nth-child(even) {
+			background-color: #F7F7F7; /* gris claro */
+		}
+		.footer {
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: #222;
+			padding: 2rem;
+			color: #fff;
+		}
+		.footer a {
+			transition: color 0.3s ease;
+			color: #fff;
+			text-decoration: none;
+		}
+		.footer a:last-child {
+			float: right;
+			margin-right: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Asistencia Total</h1>
+		<div class="table-container">
+			<table>
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Asistidas</th>
+						<th>Ausencias</th>
+						<th>Tardías</th>
+						<th>Tempranas</th>
+					</tr>
+				</thead>
+				<tbody id="table-body">
+					<tr>
+						<td>Ashley Rivera</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Olver Duvan</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Gabriel Torres</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Jade Silva</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Nestor Lopez</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Allan Marquéz</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Anthony Cornavaca</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Adrian Montoya</td>
+						<td></td>
+						<td></td>
+						<td ></td>
+						<td ></td>
+					</tr>
+					<tr>
+						<td>Aileen Balladares</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Bryan Gónzales</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Hans López</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Eyleen Cespedes</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Maxwell Guevara</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>María Jara</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+						<td>Pablo Mendieta</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Lleyton Mendez</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+						<td>Osmar Castro</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Said Pavón</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Joshua Martínrz</td>
+						<td></td>
+						<td ></td>
+						<td ></td>
+						<td ></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="calendar"></div>
+    <div class="footer">
+        <section>
+        <a href="grupo1.html">Volver a lista de asistencia</a>
+        <a href="calendario.html">Calendario</a>
+        </section>
+    </div>
+
+	<script>
+		fetch('procesar_asistencia.php?grupo=1')
+			.then(response => response.json())
+			.then(data => {
+				if (data) {
+					updateTable(data);
+				} else {
+					console.error('Error al obtener los datos de asistencia');
+				}
+			})
+			.catch(error => {
+				console.error('Error al obtener los datos de asistencia:', error);
+			});
+
+			function updateTable(asistenciaData) {
+  const tableBody = document.getElementById('table-body');
+  const rows = tableBody.rows;
+
+  rows.forEach((row) => {
+    const nombre = row.cells[0].textContent;
+    const asistencias = asistenciaData[nombre];
+    if (asistencias) {
+      row.cells[1].textContent = asistencias.asistidas;
+      row.cells[2].textContent = asistencias.ausencias;
+      row.cells[3].textContent = asistencias.tardias;
+      row.cells[4].textContent = asistencias.tempranas;
+    }
+  });
+}
+	</script>
+</body>
+</html>

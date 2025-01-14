@@ -1,0 +1,109 @@
+
+body{ 
+   background-color: #ddded3;
+    margin: auto;
+    color: #000000;
+     color: #404040;
+    font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 450px;
+    
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+.nav{
+    width: 230px;
+}
+.nav_link{
+    color: #32353d;
+    display: block;
+    width: 100%;
+    padding: 19px 0;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 16px 16px 0; /* Agrega un borde redondeado en la esquina superior derecha y en la esquina inferior derecha */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra para dar profundidad */
+     background: #fff;
+     /*background-color: #17202a ;*/
+
+}
+
+.list_item{
+    position: relative;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+   
+}
+
+.list_button:hover {
+    background-color: #e3e1e1; /* Color de fondo gris al pasar el mouse */
+}
+
+.list_button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 80%;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 16px;
+    
+    text-decoration: none;
+    color: #32353d;
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+
+}
+
+
+.texto-derecha {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    width: calc(100% - 230px); 
+    padding: 20px;
+    text-align: justify;
+    z-index: 1; 
+  }
+
+  .ASG{
+    
+    width: 70px !important; /* Ajusta el ancho de la imagen */
+    height: 70px !important; /* Ajusta el alto de la imagen */
+    margin: 0 auto 20px;
+    display: block;
+    margin-top: -60px !important; /* Ajusta la posición vertical de la imagen */
+    margin-bottom: 35px !important; /* Ajusta el espacio entre la imagen y el formulario */
+    }
+
+    .ASG img {
+        width: 100%;
+        height: 100%;
+    }
+
+  

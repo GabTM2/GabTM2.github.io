@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASG</title>
+    <link rel="stylesheet" href="/Feria/css/estilos.css">
+    
+
+    <style>
+
+table {
+            border-collapse: collapse;
+            width: 100%;
+            border-width: 1x;
+            border-style: solid;
+        }
+        th, td {
+            border: 1px solid #364552;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #F2C464;
+            color: #000000;
+        }
+        td {
+  background-color: #FFFFFF; 
+}
+td:nth-child(even) {
+  background-color: #F7F7F7; 
+}
+        .checkbox-cell {
+            text-align: center;
+        }
+        .checkbox-cell input[type="checkbox"] {
+            transform: scale(1.5); 
+        }
+      
+        header{ 
+        background-color:#212020 ;
+        color: #fff;
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+        text-align: center;
+        }
+ 
+
+.asistencia{
+  width: 90%;
+  margin: 10px auto;
+  background-color: #FFFFFF; /* blanco */
+  padding: 20px;
+  border: 1px solid #000000; /* negro */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.table-asistencia {
+  overflow-x: auto;}
+
+  button[type="button"], input[type="submit"] {
+  background-color: #212020;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="button"]#reiniciar-tabla {
+  float: right;
+  margin-right: 20px;
+}
+
+    </style>
+    
+</head>
+<body>
+    <nav class="nav">
+        <section class="wrapper">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+          
+          <ul class="list">
+        
+  
+            <div class="ASG">
+              <img src="/Feria/image/ASG.png" alt="ASG">
+          </div>
+  
+              <li class="list_item">
+                  <div class="list_button"> 
+                      <img src="/Feria/assets/libro.svg" class="list_img">
+                      <a href="/Feria/html/Inicio.html" class="nav_link">Inicio</a>
+                  </div>
+              </li>
+  
+              
+              <li class="list_item">
+                  <div class="list_button"> 
+                      <img src="/Feria/assets/tabla.svg" class="list_img">
+                      <a href="#" class="nav_link">Datos</a>
+                  </div>
+          
+              </li>
+  
+              <li class="list_item">
+                  <div class="list_button"> 
+                      <img src="/Feria/assets/perfil.svg" class="list_img">
+                      <a href="/Feria/html/Perfil.html" class="nav_link">perfil</a>
+                  </div>
+              </li>
+  
+              
+              <li class="list_item">
+                  <div class="list_button"> 
+                      <img src="/Feria/assets/config.svg" class="list_img">
+                      <a href="#" class="nav_link">Configuración</a>
+                  </div>
+              </li>
+  
+              <li class="list_item">
+                  <div class="list_button"> 
+                      <img src="/Feria/assets/flecha.svg" class="list_img">
+                      <a href="/Feria/html/Inicio.html" class="nav_link">Volver</a>
+                  </div>
+              </li>
+  
+  
+      
+      
+          </ul>
+          
+            
+            <div class="texto-derecha">
+
+                <div>
+                    <br>
+                    <form action="#" onsubmit="return procesarFormulario()" class="asistencia">
+                        <label for="fecha">Fecha de asistencia:</label>
+                        <input type="date" id="fecha" name="fecha">
+                    
+                <br>
+                <div class="table-asistencia">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Presente</th>
+                                <th>Llegada Tardía</th>
+                                <th>Salida Temprana</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Olver Duvan</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_olver"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardía_olver"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_olver"></td>
+                            </tr>
+                            <tr>
+                                <td>Gabriel Torres</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_gabriel"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_gabriel"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_gabriel"></td>
+                            </tr>
+                            <tr>
+                                <td>Néstor López</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_nestor"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_nestor"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_nestor"></td>
+                            </tr>
+                            <tr>
+                                <td>Adrian Montoya</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_adrian"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_adrian"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_adrian"></td>
+                            </tr>
+                            <tr>
+                                <td>Hans López</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_hans"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardía_hans"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_hans"></td>
+                            </tr>
+                            <tr>
+                                <td>Eyleen Cespedes</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_eyleen"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardía_eyleen"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_eyleen"></td>
+                            </tr>
+                            <tr>
+                                <td>Maxwell Guevara</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_maxwell"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_maxwell"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_maxwell"></td>
+                            </tr>
+                            <tr>
+                                <td>María Jara</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_maria"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_maria"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_maria"></td>
+                            </tr>
+                                <td>Pablo Mendieta</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_pablo"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_pablo"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_pablo"></td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td>Said Pavón</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_said"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_said"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_said"></td>
+                            </tr>
+                            <tr>
+                                <td>Joshua Martínez</td>
+                                <td class="checkbox-cell"><input type="checkbox" name="asistencia_joshua"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="tardia_joshua"></td>
+                                <td class="checkbox-cell"><input type="checkbox" name="temprana_joshua"></td>
+                            </tr>
+                            
+                            <!-- Agrega más filas según necesites -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <br>
+                    <input type="submit" value="Enviar" onclick="return procesarFormulario()">
+                    <button type="button" id="reiniciar-tabla" style="float: right; margin-right: 20px;">Reiniciar tabla</button>
+                    
+                <br>
+                </form>
+                </div>
+                <script>
+                    let reiniciando = false;
+                    document.getElementById('reiniciar-tabla').addEventListener('click', () => {
+                    reiniciando = true;
+                    // Reiniciar la tabla de asistencia
+                    const checkboxes = document.querySelectorAll('.checkbox-cell input[type="checkbox"]');
+                    checkboxes.forEach((checkbox, index) => {
+                        checkbox.checked = false;
+                        localStorage.removeItem(`asistencia_grupo1_${index}`);
+                    });
+                });
+                </script>
+                <div id="calendar"></div>
+                    
+                    <div id="mensaje-confirmacion" style="display: none;">
+                        <h2>Asistencia mandada correctamente!</h2>
+                        <p>Tu registro ha sido procesado correctamente. Gracias!!!</p>
+                    </div>
+                    <script>
+                        const checkboxes = document.querySelectorAll('.checkbox-cell input[type="checkbox"]');
+                        checkboxes.forEach((checkbox, index) => {
+                            const savedValue = localStorage.getItem(`asistencia_grupo1_${index}`);
+                            if (savedValue ==='1') {
+                                checkbox.checked = true;
+                            }
+                            checkbox.addEventListener('change', () => {
+                                localStorage.setItem(`asistencia_grupo1${index}`, checkbox.checked? '1': '0');
+                            });
+                        });
+                
+                
+                    </script>
+                    <script>
+                
+                                function procesarFormulario() {
+                                const fecha = document.getElementById('fecha').value;
+                                if (!fecha) {
+                                    alert('Por favor, selecciona una fecha de asistencia.');
+                                    return false;
+                                }
+                
+                                const formData = new FormData();
+                                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                
+                                checkboxes.forEach((checkbox) => {
+                                    formData.append(checkbox.name, checkbox.checked ? 1 : 0);
+                                });
+                
+                                formData.append('fecha', document.getElementById('fecha').value);
+                
+                
+                                const xhr = new XMLHttpRequest();
+                                xhr.open('POST', 'procesar_asistencia.php', true);
+                                xhr.send(formData);
+                
+                                xhr.onload = function() {
+                                    if (xhr.status === 200 && xhr.readyState === 4) {
+                                    alert('Asistencia mandada correctamente!');
+                                    } else {
+                                    alert('Error al enviar la asistencia');
+                                    }
+                                };
+                                xhr.addEventListener('error', function(event) {
+                                    alert('Error al enviar la asistencia');
+                                });
+                
+                                return false;
+                                }
+                            
+                
+                    </script>
+
+
+
+                
+            
+            </div>
+
+            
+        </section>
+    </nav>
+
+       
+
+</body>
+</html>

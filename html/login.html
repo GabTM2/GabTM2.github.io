@@ -1,0 +1,64 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ASG (Login)</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/Feria/css/Fondo.css">
+    <link rel="stylesheet" href="/Feria/css/login.css">
+    <link rel="shortcut icon" href="/Feria/image/ASG.png" type="image/x-icon">
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
+        <div class="login-container">
+
+            <h2>Inicio de Sesion</h2>
+
+            <div class="ASG">
+                <img src="/Feria/image/ASG.png" alt="ASG">
+            </div>
+
+            <form class="login-form">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password"><br><br>
+                    <div class="input-link">
+                        <a href="#" class="forgot-password">Has olvidado tu contraseña</a>
+                    </div>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </div>
+      
+      <script>
+        const form = document.querySelector('.login-form');
+        const usernameInput = document.querySelector('#username');
+        const passwordInput = document.querySelector('#password');
+      
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const username = usernameInput.value;
+          const password = passwordInput.value;
+      
+          if (username === 'axellaraASG' && password === '12345678') {
+            window.location.href = 'inicio.html';
+          } else {
+            alert('Usuario o contraseña incorrectos');
+          }
+        });
+      </script>
+
+    </section>
+
+</body>
+</html>
